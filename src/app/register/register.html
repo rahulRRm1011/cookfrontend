@@ -1,0 +1,32 @@
+<div class="container-fluid register-bg">
+  <div class="row h-100">
+    <div class="col-md-6 d-flex justify-content-center align-items-center min-height: 100vh;">
+      <div class="card p-4 shadow rounded" style="width: 350px;">
+        <h2 class="text-center mb-3">Register</h2>
+        <form [formGroup]="registerForm">
+          <div class="mb-3">
+            <label for="register-username" class="form-label">Username</label>
+            <input type="text" id="register-username" class="form-control" formControlName="userName"  name="username" required />
+          </div>
+          <div class="mb-3">
+            <label for="register-email" class="form-label">Email</label>
+            <input type="email" id="register-email" class="form-control" formControlName="email" name="email" required />
+          </div>
+          <div class="mb-3">
+            <label for="register-password" class="form-label">Password</label>
+            <input type="password" id="register-password" class="form-control" formControlName="password"  name="password" required />
+          </div>
+          <button (click)="register()" class="btn btn-primary w-100" >Register</button>
+        </form>
+        <p class="text-center mt-3">
+          Already have an account?
+          <a routerLink="/login">Login here</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+      <!-- Empty for now -->
+    </div>
+
+  </div>
+</div>

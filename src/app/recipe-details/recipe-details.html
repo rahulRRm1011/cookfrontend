@@ -1,0 +1,94 @@
+
+
+ <!-- NO @for needed -->
+<div class="container my-5">
+  <a routerLink="/recipes" class="text-primary mb-3 d-inline-block">Back To Recipe List</a>
+
+  <div class="row align-items-start">
+    <div class="col-lg-6">
+      <div class="image-container">
+        <img class="img-fluid rounded" [src]="recipeData.image" alt="Recipe Image" />
+      </div>
+
+      <div class="d-flex gap-3 mt-4">
+        <button (click)="downloadRecipe()" class="btn btn-success">Download Recipe</button>
+        <button (click)="savedRecipe()" class="btn btn-outline-primary">Save Recipe</button>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <h1 class="fw-bolder text-info">{{ recipeData.name }}</h1>
+      <div class="d-flex flex-wrap gap-4 my-3">
+        <p><span class="fw-bold text-warning">Cuisine:</span> {{ recipeData.cuisine }}</p>
+        <p><span class="fw-bold text-warning">Servings:</span> {{ recipeData.servings }}</p>
+        <p><span class="fw-bold text-warning">Mode of Cooking:</span> {{ recipeData.difficulty }}</p>
+      </div>
+
+      <div class="d-flex gap-5 my-4">
+        <div class="text-center">
+          <i class="fa fa-clock fa-2x"></i>
+          <p class="mt-2">
+            <span class="fw-bold text-light">Prep Time</span><br />
+            <span class="text-danger">{{ recipeData.prepTimeMinutes }}</span> Minutes
+          </p>
+        </div>
+        <div class="text-center">
+          <i class="fa fa-hourglass-half fa-2x"></i>
+          <p class="mt-2">
+            <span class="fw-bold text-light">Cook Time</span><br />
+            <span class="text-danger">{{ recipeData.cookTimeMinutes }}</span> Minutes
+          </p>
+        </div>
+        <div class="text-center">
+          <i class="fa fa-cutlery fa-2x"></i>
+          <p class="mt-2">
+            <span class="fw-bold text-light">Calories</span><br />
+            <span class="text-danger">{{ recipeData.caloriesPerServing }}</span> kcal
+          </p>
+        </div>
+      </div>
+
+      <div class="my-5">
+        <h3 class="fw-bolder text-primary">Ingredients Needed</h3>
+        <ul>
+          @for (ingredient of recipeData.ingredients; track $index) {
+            <li>{{ ingredient }}</li>
+          }
+        </ul>
+      </div>
+
+      <div class="my-5">
+        <h3 class="fw-bolder text-primary">Cooking Instruction</h3>
+        <ol>
+          @for (instruction of recipeData.instructions; track $index) {
+            <li>{{ instruction }}</li>
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!-- Related Recipes -->
+  <div class="my-5">
+    <h3 class="fw-bold">Related Recipes</h3>
+   <div class="row">
+    @for (item of relatedRecipes; track $index) {
+
+     
+      <div class="col-lg-2">
+        <div class="p-3 shadow rounded">
+          <img class="card-img-top" [src]= "item.image" alt="recipe image" />
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+          </div>
+        </div>
+      </div>
+    
+    }
+    
+   </div>
+  </div>
+</div>
+
+
+  
+

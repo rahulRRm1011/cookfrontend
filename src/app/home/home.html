@@ -1,0 +1,95 @@
+
+<div class="container">
+  <!-- Hero Banner -->
+  <div class="p-4 bg-success">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-4">
+        <h1 class="text-light">The Easiest Way To Make Your Favorite Meal</h1>
+        <p class="text-light">
+          Discover 100+ recipes in your hand with the best recipe. Help you to
+          find the easiest way to cook.
+        </p>
+        <a class="btn text-light" style="background-color: rgb(29, 120, 29)">
+          Explore our recipes
+        </a>
+      </div>
+      <div class="col-6">
+        <img class="rotate-box" height="300px" src="https://www.pngall.com/wp-content/uploads/2/Healthy-Meal.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Recipes -->
+  <div class="my-5 p-5">
+    <h1>Popular Recipe of the Week</h1>
+    <div class="d-flex justify-content-between">
+      <p>Our most popular recipes of the week</p>
+      <a href="#">View All</a>
+    </div>
+    <div class="row my-3">
+      <div class="col-lg-4" *ngFor="let project of projects; index as i">
+        <div class="p-3 shadow rounded">
+          <img class="card-img-top" [src]="project.image" alt="recipe image" />
+          <div class="card-body">
+            <h5 class="card-title">{{ project.name || 'Recipe ' + (i + 1) }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recipe Banner -->
+  <div
+    style="height: 400px; background-image: url('https://img.freepik.com/free-photo/colorful-assortment-vegetables-with-copy-space_23-2148655371.jpg?semt=ais_hybrid&w=740'); background-size: cover;"
+    class="row align-items-center my-5"
+  >
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+      <div class="bg-light rounded p-5 w-75">
+        <h3>50+ Recipes That Are Quick and Easy</h3>
+        <p class="text-secondary mt-3">Find perfect food ideas to start your day the quick and easy way.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download App -->
+  <div style="height: 450px;" class="my-5 row align-items-center text-light bg-success rounded p-5">
+    <div class="col-lg-6">
+      <img height="300px" src="https://cdn-icons-png.flaticon.com/512/3040/3040623.png" alt="App" />
+    </div>
+    <div class="col-lg-6 text-center">
+      <h1>Download App</h1>
+      <h5 class="my-3">
+        Download the App from Apple Store or <br />
+        Google Play Store for a better experience
+      </h5>
+      <img
+        width="150px"
+        src=""
+        alt=""
+      />
+      <img
+        width="150px"
+        src="https://benic360.com/wp-content/uploads/2020/06/apple-store-icon-png-8.png"
+        alt=""
+      />
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+<div class="text-center my-5">
+  <h1>Client Testimonials</h1>
+  <div class="d-flex my-5">
+    @for (item of testimonials; track $index) {
+      <div class="rounded border w-100 p-3 me-2">
+        <h5>{{ item.name }}</h5>
+        <p style="white-space: normal; text-align: justify;">
+          {{ item.message }}
+        </p>
+      </div>
+    }
+  </div>
+</div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="banner text-white text-center py-5 my-3 container">
+  <h1 class="fw-bolder text-dark">Your Recipe Collection!!</h1>
+</div>
+
+<div class="container mt-5">
+  <div class="row justify-content-start">
+    @for (item of savedRec; track $index) {
+      <div class="col-md-3 mb-4">
+      <div class="card shadow">
+        <img [src]="item.recipeImage" class="card-img-top" alt="..." />
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <h5 class="card-title m-0">{{ item.recipeName }}</h5>
+          <button class="btn" (click)="deletedRecipe(item._id)"><i class="fa fa-trash text-warning" ></i></button>
+         
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>
