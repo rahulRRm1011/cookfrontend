@@ -14,7 +14,7 @@ export class Feedbacklist implements OnInit{
    this.getFeedback()
   }
   getFeedback(){
-    this.api.getTestimonies().subscribe((res)=>{
+    this.api.getAllFeedbacks().subscribe((res)=>{
       this.feedbacks=res
       console.log(res)
     })

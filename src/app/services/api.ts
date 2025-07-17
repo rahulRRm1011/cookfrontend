@@ -67,6 +67,9 @@ export class Api {
   getAllDownload(){
     return this.http.get(`${this.baseURL}/getAlldownloads`,this.appendToken())
   }
+  getAllFeedbacks(){
+    return this.http.get(`${this.baseURL}/getAllTestimonies`,)
+  }
    
   deleteSavedRecipe(id:any){
     return this.http.delete(`${this.baseURL}/deleteSavedRecipe/${id}`,this.appendToken())
