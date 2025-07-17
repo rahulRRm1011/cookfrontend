@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SearchpipePipe } from '../pipes/searchpipe-pipe';
+import { Header } from '../header/header';
 
 @Component({
   selector: 'app-allrecipes',
-  imports: [FormsModule, NgxPaginationModule, SearchpipePipe],
+  imports: [FormsModule, NgxPaginationModule, SearchpipePipe,Header],
   templateUrl: './allrecipes.html',
   styleUrl: './allrecipes.css',
 })

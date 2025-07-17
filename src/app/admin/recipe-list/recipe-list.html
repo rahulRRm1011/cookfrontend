@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-2"><app-sidebar></app-sidebar></div>
+  <div class="col-lg-10">
+    <h1 class="text-center fw-bolder">ALL RECIPES</h1>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-outline-info">+ Add new recipe</button>
+      <input type="text" placeholder="search your recipe here" class="w-25 border rounded p-1" [(ngModel)]="searchKey"/>
+    </div>
+    <table class="table table-success mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Image</th>
+          <th scope="col">Cuisine</th>
+          <th scope="col">...</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of recipes | searchpipe:searchKey; track $index) {
+        <tr>
+          <th>{{ $index + 1 }}</th>
+          <td>{{ item.name }}</td>
+          <td>
+            <img
+              [src]="item.image"
+              alt=""
+              class="img-fluid"
+              style="width: 100px"
+            />
+          </td>
+          <td>{{ item.cuisine }}</td>
+          <td>
+            <button class="btn text-primary">
+              <i class="fa-solid fa-pen-to-square"></i></button
+            ><button class="btn text-primary">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

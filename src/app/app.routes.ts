@@ -11,6 +11,9 @@ import { SavedRecipe } from './saved-recipe/saved-recipe';
 
 
 export const routes: Routes = [
+  {
+    path:'admin',loadChildren:()=>import('./admin/admin-module').then((m)=>m.AdminModule)
+  },
     {
 
         // http://localhost:4200/
@@ -43,6 +46,5 @@ export const routes: Routes = [
     path:'savedRecipes',
     component:SavedRecipe
   },
-    {
-        path:'**',component:Pnf    }
+    
 ];

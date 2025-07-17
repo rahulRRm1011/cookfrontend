@@ -19,12 +19,13 @@ export class Api {
   }
 
   getTestimonies() {
-    return this.http.get(`${this.baseURL}/getAllTestimonies`);
+    return this.http.get(`${this.baseURL}/getApprovedTestimony`);
   }
 
   getAllRecipes() {
     return this.http.get(`${this.baseURL}/getAllRecipes`); 
   }
+  
 
   register(reqBody: any) {
     return this.http.post(`${this.baseURL}/register`, reqBody);
@@ -59,6 +60,12 @@ export class Api {
   }
   getSavedRecipe(){
     return this.http.get(`${this.baseURL}/getSavedRecipes`,this.appendToken())
+  }
+  getAllUser(){
+    return this.http.get(`${this.baseURL}/getAllUsers`,this.appendToken())
+  }
+  getAllDownload(){
+    return this.http.get(`${this.baseURL}/getAlldownloads`,this.appendToken())
   }
    
   deleteSavedRecipe(id:any){

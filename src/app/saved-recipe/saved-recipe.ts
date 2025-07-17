@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Api } from '../services/api';
+import { identifierName } from '@angular/compiler';
+import { Header } from '../header/header';
 
 
 
 @Component({
   selector: 'app-saved-recipe',
-  imports: [],
+  imports: [Header],
   templateUrl: './saved-recipe.html',
   styleUrl: './saved-recipe.css'
 })
@@ -16,6 +18,7 @@ export class SavedRecipe implements OnInit {
   constructor(private api:Api){}
   ngOnInit(): void {
     this.savedRecipes()
+    
   }
 
   savedRecipes(){
@@ -29,6 +32,8 @@ export class SavedRecipe implements OnInit {
       next:()=>{
         this.savedRec=this.savedRec.filter((eachDelRec:any)=>eachDelRec._id!=id)
         alert("succesfully deleted")
+        this.savedRecipes()
+      
       },error:(err)=>{
          console.log(err)
          alert("Cannot delete the recipe")

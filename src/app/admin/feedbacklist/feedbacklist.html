@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-2">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-lg-10">
+      <h1 class="text-center fw-bolder ">ALL USERS</h1>
+      <table class="table table-primary">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Feedback</th>
+      <th scope="col">Action/status</th>
+    </tr>
+  </thead>
+ <tbody>
+  @for (item of feedbacks;track $index) {
+    <tr>
+      <th scope="row">{{ $index + 1 }}</th>
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.message }}</td>
+      <td><button class="btn btn-danger">Approved</button></td>
+    </tr>
+  }
+</tbody>
+
+</table>
+    </div>
+</div>

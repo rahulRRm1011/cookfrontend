@@ -3,11 +3,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Api } from '../services/api';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
+import { Header } from '../header/header';
 
 
 @Component({
   selector: 'app-recipe-details',
-  imports: [RouterLink],
+  imports: [RouterLink,Header],
   templateUrl: './recipe-details.html',
   styleUrl: './recipe-details.css',
 })
